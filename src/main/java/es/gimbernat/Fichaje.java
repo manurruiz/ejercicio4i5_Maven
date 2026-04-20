@@ -2,6 +2,11 @@ package es.gimbernat;
 
 import java.time.LocalDateTime;
 
+/**
+ * creamos el fichaje
+ * el tipo
+ * y la hora
+ */
 public class Fichaje {
     private Tipo tipo;
     private LocalDateTime fechaHora;
@@ -11,6 +16,7 @@ public class Fichaje {
     }
 
     public Fichaje(Tipo tipo) {
+
         this.tipo = tipo;
         this.fechaHora = LocalDateTime.now();
     }

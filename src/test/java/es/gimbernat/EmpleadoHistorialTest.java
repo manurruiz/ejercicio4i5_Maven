@@ -3,18 +3,18 @@ package es.gimbernat;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class EmpleadoHistorialTest {
 
-    // 1. Historial empieza vacío
+    // 1. Al crear un empleado, el historial está vacío
     @Test
     public void historialEmpiezaVacio() {
         Empleado e = new Empleado("Juan");
         assertEquals(0, e.getHistorial().size());
     }
 
-    // 2. Tras fichar entrada → 1 fichaje
+    // 2. Después de un fichaje de entrada correcto, el historial tiene un fichaje
     @Test
     public void historialTrasEntrada() {
         Empleado e = new Empleado("Juan");
@@ -24,7 +24,8 @@ public class EmpleadoHistorialTest {
         assertEquals(1, e.getHistorial().size());
     }
 
-    // 3. Entrada + salida → 2 fichajes
+    // 3. Después de un fichaje de entrada y un fichaje de salida correctos, el historial tiene dos
+    //fichajes.
     @Test
     public void historialEntradaSalida() {
         Empleado e = new Empleado("Juan");
@@ -35,7 +36,7 @@ public class EmpleadoHistorialTest {
         assertEquals(2, e.getHistorial().size());
     }
 
-    // 4. Primer fichaje tras entrada es ENTRADA
+    // 4.El primer fichaje registrado después de ficharEntrada() es de tipo ENTRADA
     @Test
     public void primerFichajeEsEntrada() {
         Empleado e = new Empleado("Juan");
@@ -45,9 +46,9 @@ public class EmpleadoHistorialTest {
         assertEquals(Fichaje.Tipo.ENTRADA, e.getHistorial().get(0).getTipo());
     }
 
-    // 5. Primer fichaje tras salida es SALIDA
+    // 5. El primer fichaje registrado después de ficharSalida() es de tipo SALIDA.
     @Test
-    public  void fichajeSalidaEsSalida() {
+    public  void fichajeSalida() {
         Empleado e = new Empleado("Juan");
 
         e.ficharEntrada();
@@ -56,7 +57,8 @@ public class EmpleadoHistorialTest {
         assertEquals(Fichaje.Tipo.SALIDA, e.getHistorial().get(1).getTipo());
     }
 
-    // 6. No añadir fichaje si operación incorrecta
+    // 6.Después de un fichaje de entrada o un fichaje de salida incorrectos, no se añaden fichajes al
+    //historial.
     @Test
     public void noAñadeFichajeSiIncorrecto() {
         Empleado e = new Empleado("Juan");
@@ -72,5 +74,12 @@ public class EmpleadoHistorialTest {
         // Intentar otra entrada (incorrecta)
         e.ficharEntrada();
         assertEquals(1, e.getHistorial().size());
+    }
+    @Test
+    public void testFichajeToStringYFecha() {
+        Fichaje f = new Fichaje(Fichaje.Tipo.ENTRADA);
+
+        assertNotNull(f.getFechaHora());
+        assertTrue(f.toString().contains("ENTRADA"));
     }
 }
