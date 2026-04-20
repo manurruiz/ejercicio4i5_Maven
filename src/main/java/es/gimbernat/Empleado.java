@@ -3,14 +3,17 @@ package es.gimbernat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representamos a  un empleado de la empresa.
+ * Permite gestionar los  fichajes de entrada y salida.
+ */
 public class Empleado {
-
     private String nombre;
     private boolean dentroEmpresa;
     private List<Fichaje> historial;
 
     public Empleado(String nombre) {
-        if (nombre == null || nombre.equals("")) {
+        if (nombre == null || nombre.isEmpty()) {
             this.nombre = "Sin nombre";
         } else {
             this.nombre = nombre;
@@ -33,7 +36,16 @@ public class Empleado {
         return historial;
     }
 
-    public boolean ficharEntrada() {
+    /**
+     * Registra la entrada del empleado.
+     * @return true si se realiza correctamente, false si ya estaba dentro
+     */
+
+    /**
+     * Representa un empleado de la empresa.
+     * Permite gestionar fichajes de entrada y salida.
+     */
+    public boolean ficharEntrada(){
         if (dentroEmpresa) {
             return false;
         }
