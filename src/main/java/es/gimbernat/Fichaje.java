@@ -3,9 +3,12 @@ package es.gimbernat;
 import java.time.LocalDateTime;
 
 /**
- * creamos el fichaje
+ * Creamos el fichaje
  * el tipo
  * y la hora
+ */
+/**
+ * Representa un fichaje (entrada o salida).
  */
 public class Fichaje {
     private Tipo tipo;

@@ -60,6 +60,12 @@ public class EmpleadoTest {
     }
     //8. Comprobar que el boolean que indica si el empleado está dentro o fuera de la empresa
     //    cambia correctamente
+    /**
+     * Registra la entrada del empleado.
+     */
+    /**
+     * Registra la salida del empleado.
+     */
     @Test
     public void comprobarEstadoDentroFuera() {
         Empleado e = new Empleado("Juan");
@@ -71,5 +77,13 @@ public class EmpleadoTest {
 
         e.ficharSalida();
         assertFalse(e.isDentroEmpresa()); // vuelve a fuera
+    }
+    @Test
+    public void testFichajeCompleto() {
+        Fichaje f = new Fichaje(Fichaje.Tipo.ENTRADA);
+
+        assertNotNull(f.getFechaHora());
+        assertEquals(Fichaje.Tipo.ENTRADA, f.getTipo());
+        assertTrue(f.toString().contains("ENTRADA"));
     }
 }

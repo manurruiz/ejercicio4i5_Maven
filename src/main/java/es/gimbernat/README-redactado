@@ -1,0 +1,7 @@
+Se han añadido nuevos tests para mejorar la cobertura:
+
+- Se ha testado toString() de Fichaje
+- Se ha validado getFechaHora()
+- Se han añadido casos límite de fichajes
+
+Con esto se ha mejorado la cobertura global del proyecto.

@@ -40,6 +40,11 @@ public class Empleado {
      * Registra la entrada del empleado.
      * @return true si se realiza correctamente, false si ya estaba dentro
      */
+
+    /**
+     * Representa un empleado de la empresa.
+     * Permite gestionar fichajes de entrada y salida.
+     */
     public boolean ficharEntrada(){
         if (dentroEmpresa) {
             return false;
