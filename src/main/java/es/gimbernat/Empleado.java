@@ -13,7 +13,7 @@ public class Empleado {
     private List<Fichaje> historial;
 
     public Empleado(String nombre) {
-        if (nombre == null || nombre.equals("")) {
+        if (nombre == null || nombre.isEmpty()) {
             this.nombre = "Sin nombre";
         } else {
             this.nombre = nombre;
